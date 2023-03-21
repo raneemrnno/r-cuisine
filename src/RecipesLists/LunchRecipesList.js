@@ -7,7 +7,7 @@ const LunchRecipesList = [
     title: "Mandi",
     description:
       "a traditional dish that originated from Hadhramaut, Yemen, consisting mainly of meat and rice with a special blend of spices",
-    getImageSrc: () => require("../images/photo1.jpg"),
+    getImageSrc: () => require("../images/photo2.jpg"),
     ingrediants: [
       "1 kg chicken legs",
       "1/2 kg Basmati rice",
