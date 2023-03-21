@@ -163,7 +163,7 @@ export default function Navbar() {
               isOpen={signInIsOpen}
               onOpen={signInOpen}
               onClose={signInClose}
-              placement="right"
+              placement="auto"
               closeOnBlur={false}
             >
               <PopoverTrigger>
