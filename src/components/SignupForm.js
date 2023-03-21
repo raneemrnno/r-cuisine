@@ -9,12 +9,6 @@ import {
   VStack,
   HStack,
 } from "@chakra-ui/react";
-import {
-  Alert,
-  AlertTitle,
-  AlertIcon,
-  AlertDescription,
-} from "@chakra-ui/alert";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -98,6 +92,7 @@ const SignupForm = ({ signUpModal }) => {
               id="firstName"
               name="firstName"
               {...signUpFormik.getFieldProps("firstName")}
+              onFocus={{ preventScroll: false }}
             />
             <FormErrorMessage>{signUpFormik.errors.firstName}</FormErrorMessage>
           </FormControl>
@@ -108,6 +103,7 @@ const SignupForm = ({ signUpModal }) => {
               id="lastName"
               name="lastName"
               {...signUpFormik.getFieldProps("lastName")}
+              onFocus={{ preventScroll: false }}
             />
           </FormControl>
         </HStack>
@@ -122,6 +118,7 @@ const SignupForm = ({ signUpModal }) => {
             id="email"
             name="email"
             {...signUpFormik.getFieldProps("email")}
+            onFocus={{ preventScroll: false }}
           />
           <FormErrorMessage>{signUpFormik.errors.email}</FormErrorMessage>
         </FormControl>
@@ -139,6 +136,7 @@ const SignupForm = ({ signUpModal }) => {
               id="password"
               name="password"
               {...signUpFormik.getFieldProps("password")}
+              onFocus={{ preventScroll: false }}
             />
             <InputRightElement h={"full"}>
               <Button
