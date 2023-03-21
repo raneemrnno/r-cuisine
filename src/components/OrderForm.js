@@ -317,13 +317,13 @@ const OrderForm = ({ resetForm, totalPrice }) => {
               colorScheme="teal"
               variant="outline"
               isDisabled={
-                step === 2 /*||
+                step === 2 ||
                 !formik.values.date ||
                 !formik.values.time ||
                 !formik.values.address ||
                 !formik.values.phone ||
                 (!!formik.errors.date && formik.touched.date) ||
-                (!!formik.errors.phone && formik.touched.phone)*/
+                (!!formik.errors.phone && formik.touched.phone)
                   ? true
                   : false
               }
