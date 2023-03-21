@@ -43,7 +43,6 @@ const SignUp = () => {
         isOpen={signUpModal.isOpen}
         onClose={signUpModal.onClose}
         size="lg"
-        scrollBehavior="inside"
       >
         <ModalOverlay />
         <ModalContent>
