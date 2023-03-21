@@ -92,7 +92,6 @@ const SignupForm = ({ signUpModal }) => {
               id="firstName"
               name="firstName"
               {...signUpFormik.getFieldProps("firstName")}
-              onFocus={() => (window.onscroll = true)}
             />
             <FormErrorMessage>{signUpFormik.errors.firstName}</FormErrorMessage>
           </FormControl>
@@ -103,7 +102,6 @@ const SignupForm = ({ signUpModal }) => {
               id="lastName"
               name="lastName"
               {...signUpFormik.getFieldProps("lastName")}
-              onFocus={() => (window.onscroll = true)}
             />
           </FormControl>
         </HStack>
@@ -118,7 +116,6 @@ const SignupForm = ({ signUpModal }) => {
             id="email"
             name="email"
             {...signUpFormik.getFieldProps("email")}
-            onFocus={() => (window.onscroll = true)}
           />
           <FormErrorMessage>{signUpFormik.errors.email}</FormErrorMessage>
         </FormControl>
@@ -136,7 +133,6 @@ const SignupForm = ({ signUpModal }) => {
               id="password"
               name="password"
               {...signUpFormik.getFieldProps("password")}
-              onFocus={() => (window.onscroll = true)}
             />
             <InputRightElement h={"full"}>
               <Button
