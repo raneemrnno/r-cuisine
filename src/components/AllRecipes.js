@@ -19,6 +19,8 @@ const AllRecipes = (props) => {
   // is the number of items that have already been displayed by the previous pages
   const offset = currentPage * PER_PAGE;
 
+  console.log("current = ", currentPage, " offset = ", offset);
+
   const pageCount = () => {
     const categoryData = [];
     if (props.type === "break_fast") {
@@ -159,34 +161,35 @@ const AllRecipes = (props) => {
           <Link to="/desserts">Desserts:</Link>
         ) : null}
       </Heading>
-      <HStack spacing={5}>
-        <Heading
-          as="h3"
-          color={
-            window.location.pathname === `/${props.type}/oriental`
-              ? "black"
-              : "red.600"
-          }
-          fontFamily="cursive"
-        >
-          <Link to={`/${props.type}/oriental`}>oriental</Link>
-        </Heading>
-        <Heading as={"h3"} color="pink.900">
-          /
-        </Heading>
-        <Heading
-          as="h3"
-          color={
-            window.location.pathname === `/${props.type}/western`
-              ? "black"
-              : "red.600"
-          }
-          fontFamily="cursive"
-        >
-          <Link to={`/${props.type}/western`}>western</Link>
-        </Heading>
-      </HStack>
-
+      {currentPage === 0 && (
+        <HStack spacing={5}>
+          <Heading
+            as="h3"
+            color={
+              window.location.pathname === `/${props.type}/oriental`
+                ? "black"
+                : "red.600"
+            }
+            fontFamily="cursive"
+          >
+            <Link to={`/${props.type}/oriental`}>oriental</Link>
+          </Heading>
+          <Heading as={"h3"} color="pink.900">
+            /
+          </Heading>
+          <Heading
+            as="h3"
+            color={
+              window.location.pathname === `/${props.type}/western`
+                ? "black"
+                : "red.600"
+            }
+            fontFamily="cursive"
+          >
+            <Link to={`/${props.type}/western`}>western</Link>
+          </Heading>
+        </HStack>
+      )}
       <Box
         display="grid"
         gridTemplateColumns={{

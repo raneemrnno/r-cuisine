@@ -108,7 +108,6 @@ app.post("/place_order", async (req, res) => {
 //view cart items
 app.get("/view_cart_items/:username", async (req, res) => {
   const username = req.params.username;
-  //console.log("hi", username);
   db.getConnection(async (err, connection) => {
     if (err) throw err;
     const sqlSearch =
@@ -120,8 +119,6 @@ app.get("/view_cart_items/:username", async (req, res) => {
       console.log(result.length);
       if (result.length != 0) {
         connection.release();
-        //console.log("------> order items found", result);
-        //res.send(result);
         res.send(result);
       } else {
         res.send("error");

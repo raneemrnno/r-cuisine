@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/myproject/static/css/main.435b2073.css",
-    "main.js": "/myproject/static/js/main.84343ba7.js",
-    "static/js/988.08ac1ca7.chunk.js": "/myproject/static/js/988.08ac1ca7.chunk.js",
-    "static/media/photo7.jpg": "/myproject/static/media/photo7.29ece07a59101e7d0d26.jpg",
-    "static/media/photo4.jpg": "/myproject/static/media/photo4.803a6e17ed40b2b7204d.jpg",
-    "static/media/cart.png": "/myproject/static/media/cart.8fa14526776db055c3f4.png",
-    "static/media/photo5.jpg": "/myproject/static/media/photo5.9c8f374340b450dde826.jpg",
-    "static/media/photo6.jpg": "/myproject/static/media/photo6.25f97e10495c958b40e8.jpg",
-    "static/media/photo3.jpg": "/myproject/static/media/photo3.22204986409c59370892.jpg",
-    "static/media/photo1.jpg": "/myproject/static/media/photo1.330850645723dbba7f9e.jpg",
-    "static/media/logo_about_us.png": "/myproject/static/media/logo_about_us.990f34973e987d0e3b0f.png",
-    "static/media/logo_header.png": "/myproject/static/media/logo_header.e54b5458c16e27f06f50.png",
-    "static/media/logo.png": "/myproject/static/media/logo.82043321831aba59209e.png",
-    "static/media/cook.jpg": "/myproject/static/media/cook.9617f46082b3daa38294.jpg",
-    "static/media/photo2.jpeg": "/myproject/static/media/photo2.b014b9b91451245bf503.jpeg",
-    "index.html": "/myproject/index.html",
-    "main.435b2073.css.map": "/myproject/static/css/main.435b2073.css.map",
-    "main.84343ba7.js.map": "/myproject/static/js/main.84343ba7.js.map",
-    "988.08ac1ca7.chunk.js.map": "/myproject/static/js/988.08ac1ca7.chunk.js.map"
+    "main.css": "/static/css/main.435b2073.css",
+    "main.js": "/static/js/main.8da1e155.js",
+    "static/js/988.08ac1ca7.chunk.js": "/static/js/988.08ac1ca7.chunk.js",
+    "static/media/photo7.jpg": "/static/media/photo7.29ece07a59101e7d0d26.jpg",
+    "static/media/photo4.jpg": "/static/media/photo4.803a6e17ed40b2b7204d.jpg",
+    "static/media/cart.png": "/static/media/cart.8fa14526776db055c3f4.png",
+    "static/media/photo5.jpg": "/static/media/photo5.9c8f374340b450dde826.jpg",
+    "static/media/photo6.jpg": "/static/media/photo6.25f97e10495c958b40e8.jpg",
+    "static/media/photo3.jpg": "/static/media/photo3.22204986409c59370892.jpg",
+    "static/media/photo1.jpg": "/static/media/photo1.330850645723dbba7f9e.jpg",
+    "static/media/logo_about_us.png": "/static/media/logo_about_us.990f34973e987d0e3b0f.png",
+    "static/media/logo_header.png": "/static/media/logo_header.e54b5458c16e27f06f50.png",
+    "static/media/logo.png": "/static/media/logo.82043321831aba59209e.png",
+    "static/media/cook.jpg": "/static/media/cook.9617f46082b3daa38294.jpg",
+    "static/media/photo2.jpeg": "/static/media/photo2.b014b9b91451245bf503.jpeg",
+    "index.html": "/index.html",
+    "main.435b2073.css.map": "/static/css/main.435b2073.css.map",
+    "main.8da1e155.js.map": "/static/js/main.8da1e155.js.map",
+    "988.08ac1ca7.chunk.js.map": "/static/js/988.08ac1ca7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.435b2073.css",
-    "static/js/main.84343ba7.js"
+    "static/js/main.8da1e155.js"
   ]
 }

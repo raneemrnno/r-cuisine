@@ -15,16 +15,18 @@ import * as Yup from "yup";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { useAlertContext } from "../context/alertContext";
+import { useApiContext } from "../context/ApiContext";
 
 const LoginForm = () => {
   const [response, setResponse] = useState(null);
   const { onOpenAlert } = useAlertContext();
+  const { api } = useApiContext();
 
   const [showPassword, setShowPassword] = useState(false);
 
   const submitSignInUser = (values) => {
     axios
-      .post("http://localhost:8000/login", {
+      .post(api.path + api.login, {
         email: values.email,
         password: values.password,
       })

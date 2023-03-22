@@ -29,11 +29,13 @@ import { React, useState, useEffect } from "react";
 import { ArrowForwardIcon, AddIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import { useAlertContext } from "../context/alertContext";
+import { useApiContext } from "../context/ApiContext";
 
 const RecipeCard = (props) => {
   const username = localStorage.getItem("userName");
   const [response, setResponse] = useState(null);
   const { onOpenAlert } = useAlertContext();
+  const { api } = useApiContext();
 
   const numberOfPeople = [2, 4, 6, 8, 10];
   const numPopover = useDisclosure();
@@ -48,7 +50,7 @@ const RecipeCard = (props) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8000/create_order_item", {
+      .post(api.path + api.create_order_item, {
         item_id: props.id,
         item_name: props.title,
         item_type: props.type,

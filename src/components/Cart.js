@@ -21,32 +21,11 @@ import LunchRecipesList from "../RecipesLists/LunchRecipesList";
 import BreakFastRecipesList from "../RecipesLists/BreakFastRecipesList";
 import DessertRecipesList from "../RecipesLists/DessertRecipesList";
 import OrderForm from "./OrderForm";
+import { useApiContext } from "../context/ApiContext";
 
 const Cart = () => {
   const username = localStorage.getItem("userName");
-
-  const current = new Date();
-  const todayDate = `${current.getFullYear()}-${
-    current.getMonth() + 1
-  }-${current.getDate()}`;
-
-  const compareDates = (d1, d2) => {
-    let date1 = new Date(d1).getTime();
-    let date2 = new Date(d2).getTime();
-    const maxPeople = 8; //Math.max(...items.map((o) => o.people_number));
-    //console.log("tomorrow will be", date2 + 86400000);
-    //console.log("tomorrow", date1);
-
-    if (maxPeople <= 4) {
-      if (date1 > date2 || date1 === date2) return true;
-      else return false;
-    } else if (maxPeople > 4) {
-      // if people number > 4 nearest date will be after tomorrow
-      if (date1 > date2 + 86400000) {
-        return true;
-      } else return false;
-    }
-  };
+  const { api } = useApiContext();
 
   const [isLoading, setIsLoading] = useState(true);
   const [items, setItems] = useState(null);
@@ -54,18 +33,16 @@ const Cart = () => {
   let totalPrice = 0;
 
   const fetchData = async () => {
-    await axios
-      .get(`http://localhost:8000/view_cart_items/${username}`)
-      .then((response) => {
-        if (response.data === "error") {
+    await axios.get(api.path + api.view_items + username).then((response) => {
+      if (response.data === "error") {
+        setIsLoading(false);
+      } else {
+        setItems(response.data);
+        setTimeout(() => {
           setIsLoading(false);
-        } else {
-          setItems(response.data);
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 1000);
-        }
-      });
+        }, 1000);
+      }
+    });
   };
 
   const findImg = (item_type, item_id) => {
@@ -82,9 +59,7 @@ const Cart = () => {
 
   const deleteItem = (id, item_type) => {
     axios
-      .get(
-        `http://localhost:8000/remove_cart_item/${id}/${username}/${item_type}`
-      )
+      .get(api.path + api.remove_item + id + "/" + username + "/" + item_type)
       .then((response) => {
         if (response.data === "deleted") {
           const updatedItems = items.filter((item) => item.id !== id);

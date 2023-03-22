@@ -24,6 +24,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState, useEffect } from "react";
 import { useAlertContext } from "../context/alertContext";
+import { useApiContext } from "../context/ApiContext";
 
 const Form1 = ({ formik, totalPrice }) => {
   return (
@@ -212,9 +213,11 @@ const OrderForm = ({ resetForm, totalPrice }) => {
     current.getMonth() + 1
   }-${current.getDate()}`;
 
+  const { api } = useApiContext();
+
   const submit = (values) => {
     axios
-      .post("http://localhost:8000/place_order", {
+      .post(api.path + api.place_order, {
         username: username,
         address: values.address,
         phone: values.phone,
