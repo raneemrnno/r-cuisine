@@ -67,15 +67,15 @@ export default function AboutUs() {
           <Heading>Online cuisine located in Dubai, UAE</Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
             R-Cuisine is an online cuisine provides oriantel and westren
-            delicious recipes in addition to the ability to receive regular
+            delicious recipes in addition to the ability to receive food regular
             requests or for occasions where the number of people is large.
             <br />
             It is characterized by ease of use, as you find all the food recipes
             you need (breakfast - lunch - dessert) detailed in a smooth manner.
             <br />
-            It allows the client to order many kind of meals and we will deliver
-            them to him at the date and time he/she specifies and pay cash on
-            delivery.
+            It allows the clients to order from many kind of meals and specify
+            date, time, address and payment method after signing up and we will
+            deliver the order to the pointed address.
           </Text>
           <Text
             textTransform={"uppercase"}
