@@ -153,6 +153,13 @@ const AllRecipes = (props) => {
         color={"gray.600"}
         fontFamily="mono"
       >
+        {/*props.type === "break_fast"
+          ? "Breakfast:"
+          : props.type === "lunch"
+          ? "Lunch:"
+          : props.type === "desserts"
+          ? "Desserts:"
+  : null*/}
         {props.type === "break_fast" ? (
           <Link to="/break_fast">Breakfast:</Link>
         ) : props.type === "lunch" ? (

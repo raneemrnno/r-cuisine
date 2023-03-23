@@ -9,19 +9,12 @@ import {
   StackDivider,
   Icon,
   useColorModeValue,
-  Button,
   HStack,
 } from "@chakra-ui/react";
 
 import { FcAssistant, FcInTransit, FcReading } from "react-icons/fc";
 import { ReactElement } from "react";
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from "react-icons/md";
+import { MdPhone, MdEmail } from "react-icons/md";
 
 interface FeatureProps {
   text: string;

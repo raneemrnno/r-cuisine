@@ -91,8 +91,7 @@ export default function RecipeDetails() {
             <Text>{title} </Text>
             <Text fontSize={20} color="#59A52C">
               {" "}
-              {detailsList.category} / {detailsList.country}
-              plate
+              {detailsList.category} / {detailsList.country} dish
             </Text>
           </Heading>
 
@@ -168,33 +167,36 @@ export default function RecipeDetails() {
               ))}
             </ul>
           </Text>
-
-          <Heading
-            lineHeight={1.1}
-            zIndex={0}
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
-          >
-            <Text
-              as={"span"}
-              position={"relative"}
-              _after={{
-                content: "''",
-                width: "full",
-                height: "30%",
-                position: "absolute",
-                bottom: 1,
-                left: 0,
-                bg: "red.400",
-                zIndex: -1,
-              }}
-            >
-              Sides:
-            </Text>
-          </Heading>
-          <Text fontSize={20} pl={0} color="gray.600" fontWeight={600}>
-            {detailsList.side}
-          </Text>
+          {detailsList.side && (
+            <>
+              <Heading
+                lineHeight={1.1}
+                zIndex={0}
+                fontWeight={600}
+                fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
+              >
+                <Text
+                  as={"span"}
+                  position={"relative"}
+                  _after={{
+                    content: "''",
+                    width: "full",
+                    height: "30%",
+                    position: "absolute",
+                    bottom: 1,
+                    left: 0,
+                    bg: "red.400",
+                    zIndex: -1,
+                  }}
+                >
+                  Sides:
+                </Text>
+              </Heading>
+              <Text fontSize={20} pl={0} color="gray.600" fontWeight={600}>
+                {detailsList.side}.
+              </Text>
+            </>
+          )}
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
@@ -219,7 +221,11 @@ export default function RecipeDetails() {
           position={"relative"}
           w={"full"}
         >
-          <Stack direction={{ base: "column", md: "column" }} spacing={"20"}>
+          <Stack
+            mt={56}
+            direction={{ base: "column", md: "column" }}
+            spacing={"20"}
+          >
             <Box
               position={"relative"}
               height={"400px"}
@@ -239,7 +245,7 @@ export default function RecipeDetails() {
               />
             </Box>
 
-            <Box
+            {/*<Box
               position={"relative"}
               height={"400px"}
               rounded={"2xl"}
@@ -251,7 +257,7 @@ export default function RecipeDetails() {
               sx={{
                 aspectRatio: "16/9",
               }}
-            />
+            />*/}
           </Stack>
         </Flex>
       </Stack>

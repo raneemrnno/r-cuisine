@@ -109,7 +109,7 @@ const RecipeCard = (props) => {
         </CardHeader>
         <CardBody>
           <Text color={"gray.500"} size="xs" mb={4}>
-            {props.country} plate
+            {props.country} dish
           </Text>
           <Text py="2">{props.description}.</Text>
         </CardBody>
