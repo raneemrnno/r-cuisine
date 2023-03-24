@@ -1,6 +1,7 @@
-import { Box, Heading, HStack } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { Pagination } from "react-use-pagination";
 import ReactPaginate from "react-paginate";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
@@ -19,8 +20,6 @@ const AllRecipes = (props) => {
   // is the number of items that have already been displayed by the previous pages
   const offset = currentPage * PER_PAGE;
 
-  console.log("current = ", currentPage, " offset = ", offset);
-
   const pageCount = () => {
     const categoryData = [];
     if (props.type === "break_fast") {
@@ -38,7 +37,6 @@ const AllRecipes = (props) => {
           (recipe) =>
             recipe.category === props.category && categoryData.push(recipe)
         );
-        //console.log(categoryData.length);
         return Math.ceil(categoryData.length / PER_PAGE);
       } else return Math.ceil(LunchRecipesList.length / PER_PAGE);
     }
@@ -60,7 +58,7 @@ const AllRecipes = (props) => {
       data.map(
         (recipe) =>
           recipe.category === props.category && categoryData.push(recipe)
-      ); //console.log(categoryData.length)
+      );
       if (categoryData.length > 6) {
         newData = categoryData.slice(offset, offset + PER_PAGE);
       }
@@ -144,7 +142,6 @@ const AllRecipes = (props) => {
       p={6}
       alignItems="flex-start"
       spacing={8}
-      //minH={"82vh"}
     >
       <Heading
         as="h1"
@@ -153,50 +150,56 @@ const AllRecipes = (props) => {
         color={"gray.600"}
         fontFamily="mono"
       >
-        {/*props.type === "break_fast"
-          ? "Breakfast:"
-          : props.type === "lunch"
-          ? "Lunch:"
-          : props.type === "desserts"
-          ? "Desserts:"
-  : null*/}
         {props.type === "break_fast" ? (
-          <Link to="/break_fast">Breakfast:</Link>
+          <Link to="/break_fast" onClick={() => setCurrentPage(0)}>
+            Breakfast:
+          </Link>
         ) : props.type === "lunch" ? (
-          <Link to="/lunch">lunch:</Link>
+          <Link to="/lunch" onClick={() => setCurrentPage(0)}>
+            lunch:
+          </Link>
         ) : props.type === "desserts" ? (
-          <Link to="/desserts">Desserts:</Link>
+          <Link to="/desserts" onClick={() => setCurrentPage(0)}>
+            Desserts:
+          </Link>
         ) : null}
       </Heading>
-      {currentPage === 0 && (
-        <HStack spacing={5}>
-          <Heading
-            as="h3"
-            color={
-              window.location.pathname === `/${props.type}/oriental`
-                ? "black"
-                : "red.600"
-            }
-            fontFamily="cursive"
+
+      <HStack spacing={5}>
+        <Heading
+          as="h3"
+          color={
+            window.location.pathname === `/${props.type}/oriental`
+              ? "black"
+              : "red.600"
+          }
+          fontFamily="cursive"
+        >
+          <Link
+            to={`/${props.type}/oriental`}
+            onClick={() => setCurrentPage(0)}
           >
-            <Link to={`/${props.type}/oriental`}>oriental</Link>
-          </Heading>
-          <Heading as={"h3"} color="pink.900">
-            /
-          </Heading>
-          <Heading
-            as="h3"
-            color={
-              window.location.pathname === `/${props.type}/western`
-                ? "black"
-                : "red.600"
-            }
-            fontFamily="cursive"
-          >
-            <Link to={`/${props.type}/western`}>western</Link>
-          </Heading>
-        </HStack>
-      )}
+            oriental
+          </Link>
+        </Heading>
+        <Heading as={"h3"} color="pink.900">
+          /
+        </Heading>
+        <Heading
+          as="h3"
+          color={
+            window.location.pathname === `/${props.type}/western`
+              ? "black"
+              : "red.600"
+          }
+          fontFamily="cursive"
+        >
+          <Link to={`/${props.type}/western`} onClick={() => setCurrentPage(0)}>
+            western
+          </Link>
+        </Heading>
+      </HStack>
+
       <Box
         display="grid"
         gridTemplateColumns={{
@@ -217,6 +220,7 @@ const AllRecipes = (props) => {
         <ReactPaginate
           pageCount={pageCount()}
           onPageChange={handlePageClick}
+          forcePage={currentPage}
           activeClassName={"item active "}
           breakClassName={"item break-me "}
           containerClassName={"pagination"}
