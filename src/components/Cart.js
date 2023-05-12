@@ -37,10 +37,10 @@ const Cart = () => {
       if (response.data === "error") {
         setIsLoading(false);
       } else {
-        setItems(response.data);
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);
+        setItems(response.data);
       }
     });
   };
@@ -62,17 +62,14 @@ const Cart = () => {
       .get(api.path + api.remove_item + id + "/" + username + "/" + item_type)
       .then((response) => {
         if (response.data === "deleted") {
-          const updatedItems = items.filter((item) => item.id !== id);
-          if (updatedItems.length < 1) {
-            setItems(null);
-          } else setItems(updatedItems);
+          setItems(null);
         }
       });
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
   return (
     <Container maxW={"7xl"} minH={items === null ? "48vh" : "82vh"}>
       {isLoading ? (
